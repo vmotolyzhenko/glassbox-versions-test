@@ -1,0 +1,19 @@
+server:
+  port: 8080
+management:
+  server:
+    port: 8081
+  health:
+    readinessState:
+      enabled: true
+    livenessState:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
